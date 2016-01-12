@@ -77,49 +77,8 @@ testH tn | tn == "0"  =
             putStrLn ("    dx rule       :: " ++ (showPattern (esBRewriteEnd)))
             putStrLn ("    evaluation    :: " ++ (showVars (evalC es2Input esBRewriteStart)))
             putStrLn ("    application   :: " ++ (showMaybeTerm (apply es2Input esBRewrite)))
-        -- | tn == "2"  =
-        --   do
-        --     putStrLn ("# eval " ++ (showPattern rewriteStart1) ++ "  on  " ++ (showTerm testInput1))
-        --     putStrLn ("    input    ::  " ++ (showTerm (testInput1)))
-        --     putStrLn ("    sx rule  ::  " ++ (showPattern (rewriteStart1)))
-        --     putStrLn ("    result   ::  " ++ (showVars (eval testInput1 rewriteStart1)))
-        -- | tn == "3"  =
-        --   do
-        --     putStrLn ("# eval " ++ (showPattern rewriteStart1) ++ "  on  " ++ (showTerm testInput1))
-        --     putStrLn ("    input    ::  " ++ (showTerm (testInput1)))
-        --     putStrLn ("    sx rule  ::  " ++ (showPattern (rewriteStart1)))
-        -- | tn == "4"  =
-        --   do
-        --     putStrLn ("# eval " ++ (showPattern rewriteStart2) ++ "  on  " ++ (showTerm testInput2))
-        --     putStrLn ("    input    ::  " ++ (showTerm (testInput2)))
-        --     putStrLn ("    sx rule  ::  " ++ (showPattern (rewriteStart2)))
-        --     putStrLn ("    result   ::  " ++ (showVars (eval testInput2 rewriteStart2)))
-        -- | tn == "5"  =
-        --   do
-        --     putStrLn ("# eval " ++ (showPattern rewriteStart2) ++ "  on  " ++ (showTerm testInput2))
-        --     putStrLn ("    input    ::  " ++ (showTerm (testInput2)))
-        --     putStrLn ("    sx rule  ::  " ++ (showPattern (rewriteStart2)))
-        --     putStrLn ("    dx rule  ::  " ++ (showPattern (rewriteEnd2)))
-        --     putStrLn ("    result   ::  " ++ (concat [showTerm x | x <-(apply testInput2 rewrite2)]))
-        --     putStrLn ("    dx rule  ::  " ++ (showPattern (rewriteEnd1)))
-        --     putStrLn ("    result   ::  " ++ (concat [showTerm x | x <-(apply testInput1 rewrite1)]))
-        -- | tn == "6"  =
-        --   do
-        --     putStrLn ("# eval " ++ (showPattern ) ++ "  on  " ++ (showTerm testInput2))
-        --     putStrLn ("    input    ::  " ++ (showTerm (testInput2)))
-        --     putStrLn ("    sx rule  ::  " ++ (showPattern (rewriteStart2)))
-        --     putStrLn ("    result   ::  " ++ (showVars (eval testInput2 rewriteStart2)))
-        -- | tn == "7"  =
-        --   do
-        --     putStrLn ("# eval " ++ (showPattern rewriteStart2) ++ "  on  " ++ (showTerm testInput2))
-        --     putStrLn ("    input    ::  " ++ (showTerm (testInput2)))
-        --     putStrLn ("    sx rule  ::  " ++ (showPattern (rewriteStart2)))
-        --     putStrLn ("    dx rule  ::  " ++ (showPattern (rewriteEnd2)))
-        --     putStrLn ("    result   ::  " ++ (concat [showTerm x | x <-(apply testInput2 rewrite2)]))
-        -- | tn == "100" =
-          -- do
-            -- putStrLn (show (applySequencePattern (  SPSPSeq (SPSPSeq (SPSPSeq (SPAlpha 'a') (SPVar 'x')) (SPAlpha 'a')) (SPVar 'y')) [('x', ESequence (Alpha 'f')), ('y', ESequence (Alpha 'g'))]))
-        | otherwise = putStrLn (show (' '))
+          | otherwise = putStrLn (show (' '))
+
           where
             -- Esempio slides
             exampleInput = PC (

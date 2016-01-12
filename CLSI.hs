@@ -173,6 +173,8 @@ module CLSI (
   -- ########################################################
 
 
+
+
   -- #### EVALUATION ########################################
 
   -- Evaluates a term with a pattern, returning the variables value list if the
@@ -203,11 +205,13 @@ module CLSI (
           otherwise -> Nothing
       PLC sequencePattern pattern ->
         case te of
-          LC sequence term -> ((evalSequencePattern sequence sequencePattern) ?++! (evalPattern term pattern))
+          LC sequence term -> ((evalSequencePattern sequence sequencePattern)
+                                ?++! (evalPattern term pattern))
           otherwise -> Nothing
       PPC pattern1 pattern2 ->
         case te of
-          PC term1 term2 -> ((evalPattern term1 pattern1) ?++! (evalPattern term2 pattern2))
+          PC term1 term2 -> ((evalPattern term1 pattern1)
+                              ?++! (evalPattern term2 pattern2))
           otherwise -> Nothing
       PTerm term -> Just []
       PVar c -> Just [(c, (ETerm te))]
@@ -236,20 +240,11 @@ module CLSI (
               otherwise -> Nothing
           otherwise -> Nothing
       SPSVar c -> Just [(c, (ESequence se))]
-        -- case se of
-        --   Seq sq -> Just [(s, (ESequence se))]
-        --   otherwise -> Nothing
       SPVar c ->
         case se of
           Alpha a -> Just [(c, (ESequence (Alpha a)))]
           otherwise -> Nothing
 
-
-  -- patternToSequencePattern :: Pattern -> SequencePattern
-  -- patternToSequencePattern (PSequencePattern s) = s
-
-  -- sequencePatternToPattern :: SequencePattern -> Pattern
-  -- sequencePatternToPattern s = (PSequencePattern s)
 
   -- #############################################################################
   -- #############################################################################
@@ -303,7 +298,7 @@ module CLSI (
       -- S • S (Sequencing)
       Seq sequenceA sequenceB -> (showSequence sequenceA) ++ " • " ++ (showSequence sequenceB)
 
-      otherwise -> "\x1b[30;1mNothing\x1b[37m"
+      otherwise -> "\x1b[30;1mε\x1b[37m"
 
 
   -- Prints a pattern recursively in a readable way
