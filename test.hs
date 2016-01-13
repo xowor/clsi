@@ -77,7 +77,7 @@ testH tn | tn == "0"  =
             putStrLn ("    dx rule       :: " ++ (showPattern (esBRewriteEnd)))
             putStrLn ("    evaluation    :: " ++ (showVars (evalC es2Input esBRewriteStart)))
             putStrLn ("    application   :: " ++ (showMaybeTerm (apply es2Input esBRewrite)))
-          | otherwise = putStrLn (show (' '))
+        | otherwise = putStrLn (show ("Option not valid"))
 
           where
             -- Esempio slides
